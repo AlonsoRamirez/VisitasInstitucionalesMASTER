@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+
+
+
+     
+
+  <!-- ========== Definiciones de Form Bean =================== -->
+  <form-beans>
+       <form-bean name="Aspirante" type="Sistema.Visitas.Institucionales.Core.Model.Aspirante"/> 
+       <form-bean name="Autenticacion" type="Sistema.Visitas.Institucionales.Core.Model.Autenticacion"/>
+       <form-bean name="Escuela" type="Sistema.Visitas.Institucionales.Core.Model.Escuela"/> 
+       <form-bean name="Facultad" type="Sistema.Visitas.Institucionales.Core.Model.Facultad"/> 
+       <form-bean name="Institucion" type="Sistema.Visitas.Institucionales.Core.Model.Institucion"/>
+       <form-bean name="Rol" type="Sistema.Visitas.Institucionales.Core.Model.Rol"/> 
+       <form-bean name="Usuario" type="Sistema.Visitas.Institucionales.Core.Model.Usuario"/> 	
+       <form-bean name="Visitas" type="Sistema.Visitas.Institucionales.Core.Model.Visitas"/> 	
+  </form-beans>
+
+
+
+
+
+
+  <!-- ==========Forward's  Globales ============================== -->
+  <global-forwards>
+        <forward name="login" path="/login.jsp"/>
+        <forward name="error" path="/error.jsp"/>
+        <forward name="visitas" path="/Visitas.jsp"/>
+        <forward name="facultad" path="/Facultad.jsp"/>
+        <forward name="escuelas" path="/Escuelas.jsp"/>
+        <forward name="instituciones" path="/Instituciones.jsp"/>
+        <forward name="usuarios" path="/Usuarios.jsp"/>
+        <forward name="roles" path="/roles.jsp"/>
+        <forward name="adminhome" path="/Catalogos/AdminHome.jsp"/>
+        <forward name="coordinatorhome" path="/Catalogos/CoordinatorHome.jsp"/>
+        <forward name="docentehome" path="/Catalogos/DocenteHome.jsp"/>
+        <forward name="secretariahome" path="/Catalogos/SecretariaHome.jsp"/>
+        <forward name="reportes" path="/Reportes/Reportes.jsp"/>
+        <forward name="mantenimientosg" path="/_Layout/MPMnto.jsp"/>
+        <forward name="secretariahome" path="/_Layout/MPReportes.jsp"/>
+  </global-forwards>
+
+
+
+ 
+
+  <!-- ========== Mapeo de Acciones ============================== -->
+
+  <action-mappings>
+
+
+        <action path="/login"
+                name="Autenticacion"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.SessionController">
+            <forward name="index" path="/AdminHome.jsp"/>
+            <forward name="error" path="/error.jsp"/>
+
+        </action>
+
+         <action path="/visitas"
+                name="Visitas"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.VisitasController">
+            <forward name="visitas" path="/Visitas.jsp"/>
+
+        </action>
+        
+        <action path="/aspirante"
+                name="Aspirante"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.AspiranteController">
+            <forward name="aspirante" path="/Aspirantes.jsp"/>
+
+        </action>
+
+        
+        <action path="/escuela"
+                name="Escuela"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.EscuelasController">
+            <forward name="escuela" path="/Escuela.jsp"/>
+
+        </action>
+       
+        
+        <action path="/institucion"
+                name="Institucion"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.InstitucionController">
+            <forward name="institucion" path="/Institucion.jsp"/>
+        </action>
+        
+        <action path="/usuario"
+                name="Usuario"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.UsuariosController">
+            <forward name="usuario" path="/Usuarios.jsp"/>
+             </action>
+        
+     
+        <action path="/rol"
+                name="Rol"  scope="request"
+                type="Sistema.Visitas.Institucionales.Controllers.RolesController">
+            <forward name="roles" path="/roles.jsp"/>
+        </action>
+        
+
+  </action-mappings>
+
+
+
+
+
+  <!-- ========== Controller Configuration ======================== -->
+
+  <controller>
+    <set-property property="inputForward" value="true"/>
+  </controller>
+
+
+ 
+
+  <!-- ========== Message Resources Definitions ==================== -->
+
+  
+
+
+
+
+</struts-config>
