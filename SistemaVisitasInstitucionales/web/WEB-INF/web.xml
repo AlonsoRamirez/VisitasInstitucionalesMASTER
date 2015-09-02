@@ -29,4 +29,12 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+     <servlet>
+<servlet-name>JasperImageServlet</servlet-name>
+<servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>JasperImageServlet</servlet-name>
+<url-pattern>/jasperImage</url-pattern>
+</servlet-mapping>
 </web-app>
