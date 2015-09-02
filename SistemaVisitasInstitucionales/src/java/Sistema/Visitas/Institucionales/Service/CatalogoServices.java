@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author L.Michelle
  */
-abstract class CatalogoServices {
+public class CatalogoServices {
 
 
     public Escuela GetEscuela(int id) {
@@ -37,10 +37,10 @@ abstract class CatalogoServices {
         return EscuelaRep.eliminarEscuela(id); }
 
     
-    public Escuela SaveEscuela(Escuela escuela) {
+    public boolean SaveEscuela(Escuela escuela) {
          EscuelasRepository EscuelaRep = new EscuelasRepository();        
-        EscuelaRep.guardarEscuela(escuela);
-        return escuela;
+      return  EscuelaRep.guardarEscuela(escuela);
+        // escuela;
     }
      public Escuela UpdateEscuela(Escuela escuela) {
          EscuelasRepository EscuelaRep = new EscuelasRepository();        

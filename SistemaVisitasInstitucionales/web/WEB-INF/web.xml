@@ -17,9 +17,33 @@
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>srvUsuarios</servlet-name>
+        <servlet-class>Sistema.Visitas.Instituciones.Servlet.srvUsuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvEscuelas</servlet-name>
+        <servlet-class>Sistema.Visitas.Instituciones.Servlet.srvEscuelas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvFacultad</servlet-name>
+        <servlet-class>Sistema.Visitas.Instituciones.Servlet.srvFacultad</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvEscuelas</servlet-name>
+        <url-pattern>/srvEscuelas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvUsuarios</servlet-name>
+        <url-pattern>/srvUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvFacultad</servlet-name>
+        <url-pattern>/srvFacultad</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
